@@ -281,7 +281,6 @@
             blacklists: {
                 NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
-            subirInterval: 10,
             }
         },
         room: {
@@ -301,7 +300,6 @@
                     API.sendChat('!afkdisable');
                     API.sendChat('!joindisable');
                 }
-            usersUsedSubir: [],
             },
             queueing: 0,
             queueable: true,
