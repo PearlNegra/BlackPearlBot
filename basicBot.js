@@ -200,7 +200,6 @@
             maximumAfk: 60,
             afkRemoval: false,
             maximumDc: 30,
-            subirInterval: 10,
             bouncerPlus: true,
             blacklistEnabled: true,
             lockdownEnabled: false,
@@ -282,6 +281,7 @@
             blacklists: {
                 NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
+            subirInterval: 10,
             }
         },
         room: {
@@ -289,7 +289,6 @@
             afkList: [],
             mutedUsers: [],
             bannedUsers: [],
-            usersUsedSubir: [],
             skippable: true,
             usercommand: true,
             allcommand: true,
@@ -302,6 +301,7 @@
                     API.sendChat('!afkdisable');
                     API.sendChat('!joindisable');
                 }
+            usersUsedSubir: [],
             },
             queueing: 0,
             queueable: true,
