@@ -1749,7 +1749,7 @@
                 }
             },
             subirCommand: {
-				command: 'thor',
+				command: 'subir',
 				rank: 'user',
 				type: 'exact',
 				functionality: function (chat, cmd) {
