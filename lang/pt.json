@@ -107,7 +107,7 @@
     "trans": "/me ama uma taba!",
     "nousertrans": "/em Não vejo a trans finíssima @%%NAME%% na sala. Mencione outra!",
     "selftrans": "/me @%%NAME%%, use o comando com outra pessoa, mana!",
-    "transd": "/me @%%NAMETO%%, a @%%NAMEFROM%% %%TRANS%%",
+    "transtalk": "/me @%%NAMETO%%, a @%%NAMEFROM%% %%TRANS%%",
     "cycleguardtime": "/me [@%%NAME%%] A proteção de ciclo agora é: %%TIME%% minuto(s).",
     "dclookuprank": "/me [@%%NAME%%] Somente Seguranças ou superiores podem usar !dclookup em outros usuários.",
     "emojilist": "/me Emojis: %%LINK%%",
