@@ -1788,7 +1788,7 @@
 								return API.sendChat(subChat(basicBot.chat.selftrans, {name: name}));
 							}
 							else {
-								return API.sendChat(subChat(basicBot.chat.trans, {nameto: user.username, namefrom: chat.un, trans: this.getTrans()}));
+								return API.sendChat(subChat(basicBot.chat.transtalk, {nameto: user.username, namefrom: chat.un, trans: this.getTrans()}));
 							}
 						}
 					}
