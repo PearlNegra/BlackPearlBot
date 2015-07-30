@@ -1748,6 +1748,52 @@
                     }
                 }
             },
+            
+            kissCommand: {
+				command: ['22', 'robot'],
+				rank: 'user',
+				type: 'startsWith',
+				kisses: [
+				        "o @Robot8bit vai te sentar no 22! :full_moon_with_face: ",
+				        "o @Robot8bit vai te sentar no 22! :trollface:  ",
+				        "o @Robot8bit vai te sentar no 22! :full_moon_with_face:  ",
+				        "o @Robot8bit vai te sentar no 22! :trollface:  ",
+				        "o @Robot8bit vai te sentar no 22! :full_moon_with_face: ",
+				        "o @Robot8bit vai te sentar no 22! :trollface:  ",
+				        "o @Robot8bit vai te sentar no 22! :full_moon_with_face: ",
+				        "o @Robot8bit vai te sentar no 22! :trollface:  "
+				    ],
+				getKiss: function () {
+					var c = Math.floor(Math.random() * this.kisses.length);
+					return this.kisses[c];
+				},
+				functionality: function (chat, cmd) {
+					if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+					if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+					else {
+						var msg = chat.message;
+
+						var space = msg.indexOf(' ');
+						if (space === -1) {
+							API.sendChat(basicBot.chat.kiss);
+							return false;
+						}
+						else {
+							var name = msg.substring(space + 2);
+							var user = basicBot.userUtilities.lookupUserName(name);
+							if (user === false || !user.inRoom) {
+								return API.sendChat(subChat(basicBot.chat.nouserkiss, {name: name}));
+							}
+							else if (user.username === chat.un) {
+								return API.sendChat(subChat(basicBot.chat.selfkiss, {name: name}));
+							}
+							else {
+								return API.sendChat(subChat(basicBot.chat.kissed, {nameto: user.username, namefrom: chat.un, kiss: this.getKiss()}));
+							}
+						}
+					}
+				}
+			},
 
             cycleCommand: {
                 command: 'cycle',
