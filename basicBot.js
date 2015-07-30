@@ -1748,7 +1748,6 @@
                     }
                 }
             },
-
             cycleCommand: {
                 command: 'cycle',
                 rank: 'manager',
