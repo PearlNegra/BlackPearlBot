@@ -1749,11 +1749,11 @@
                 }
             },
             
-            kissCommand: {
+            transCommand: {
 				command: ['trans', 'trns'],
 				rank: 'user',
 				type: 'startsWith',
-				kisses: [
+				transes: [
 				        "disse que você é muito garota, muito fina :information_desk_person:",
 				        "disse que você é muito garota, muito fina :information_desk_person:",
 				        "pediu pra você mostrar os peito de 10 mil.",
@@ -1763,9 +1763,9 @@
 				        "disse que você é quem tem buceta amor, fez na tailândia! Você sim domina a pista! :hocho:",
 				        "disse que você é quem tem buceta amor, fez na tailândia! Você sim domina a pista! :hocho:"
 				    ],
-				getKiss: function () {
-					var c = Math.floor(Math.random() * this.kisses.length);
-					return this.kisses[c];
+				getTrans: function () {
+					var c = Math.floor(Math.random() * this.transes.length);
+					return this.transes[c];
 				},
 				functionality: function (chat, cmd) {
 					if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1775,20 +1775,20 @@
 
 						var space = msg.indexOf(' ');
 						if (space === -1) {
-							API.sendChat(basicBot.chat.kiss);
+							API.sendChat(basicBot.chat.trans);
 							return false;
 						}
 						else {
 							var name = msg.substring(space + 2);
 							var user = basicBot.userUtilities.lookupUserName(name);
 							if (user === false || !user.inRoom) {
-								return API.sendChat(subChat(basicBot.chat.nouserkiss, {name: name}));
+								return API.sendChat(subChat(basicBot.chat.nousertrans, {name: name}));
 							}
 							else if (user.username === chat.un) {
-								return API.sendChat(subChat(basicBot.chat.selfkiss, {name: name}));
+								return API.sendChat(subChat(basicBot.chat.selftrans, {name: name}));
 							}
 							else {
-								return API.sendChat(subChat(basicBot.chat.kissed, {nameto: user.username, namefrom: chat.un, kiss: this.getKiss()}));
+								return API.sendChat(subChat(basicBot.chat.transd, {nameto: user.username, namefrom: chat.un, trans: this.getTrans()}));
 							}
 						}
 					}
