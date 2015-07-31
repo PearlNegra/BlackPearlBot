@@ -1749,6 +1749,56 @@
                 }
             },
             
+            points: {
+                tick: void(0),
+                sync: function() {
+                    bcs.main.utils.points.prev.xp = API.getUser().xp;
+                    bcs.main.utils.points.prev.pp = API.getUser().pp;
+                    bcs.main.utils.points.tick = setTimeout(function() {  bcs.main.utils.points.foo();  }, 300000);
+                },
+                foo: function() {
+                    var _xp = bcs.main.utils.points.prev.xp > 0 ? API.getUser().xp - bcs.main.utils.points.prev.xp : 0;
+                    var _pp = bcs.main.utils.points.prev.pp > 0 ? API.getUser().pp - bcs.main.utils.points.prev.pp : 0;
+                    bcs.main.utils.points.sync();
+
+                    if (_xp > 0 || _pp > 0) {
+                        var d = new Date();
+                        var h = d.getHours();
+                        var m = d.getMinutes();
+                        var s = d.getSeconds();
+                        if (h < 10) {  h = "0" + h;  }
+                        if (m < 10) {  m = "0" + m;  }
+                        if (s < 10) {  s = "0" + s;  }
+
+                        var _earned;
+                        if (_xp > 0 && _pp == 0) {       _earned = "+ " + _xp + " <b>XP</b>";  }
+                        else if (_pp > 0 && _xp == 0) {  _earned = "+ " + _pp + " <b>PP</b>";  }
+                        else if (_xp > 0 && _pp > 0) {
+                            _earned = "+ " + _xp + " <b>XP</b> | + " + _pp + " <b>PP</b>";
+                        }
+
+                        bcs.main.addChat(
+                            "<span>"
+                            +    "<b>You just earned some points!</b><br />"
+                            +    "<a class='bcs-timestamp'>"
+                            +        _earned
+                            +        " | " + h + ":" + m + ":" + s
+                            +    "</a>"
+                            +"</span>",
+                            "bcs-pts-log");
+
+                        _console.log("@bcs.main.utils.points.foo "
+                            +    "[XP +" + _xp + " | PP +" + _pp + "]");
+                    } else {
+                        _console.log("@bcs.main.utils.points.foo [No points earned]");
+                    }
+                },
+                prev: {
+                    xp: 0,
+                    pp: 0
+                }
+            },
+            
             transCommand: {
 				command: ['trans', 'trns'],
 				rank: 'user',
