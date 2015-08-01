@@ -1,0 +1,259 @@
+/*
+ *               [BCS-2]
+ *   Cause #1 just wasn't good enough
+ *
+ * Coded by Matheus Avellar (Beta Tester)
+ * Help with ideas from Dean (DCV)
+ *
+ * Most of the stuff here is probably not
+ * the most efficient. But it works. So who cares.
+ *
+ *              sᴏᴏɴ™
+ * (https://matheusavellar.github.io/bcs-2)
+ *
+ */
+
+
+/* ---- Edits on plug.dj content ---- */
+
+body.bcs-flip {  transform: scale(-1, 1) !important;  }
+
+div#intercom-launcher.bcs-visible {
+    visibility: visible !important;
+}
+
+div.cm.promo {
+    /* "Want to post images in chat? Subscribe now" */
+    display: none !important;
+}
+
+div.cm.moderation, 
+div.cm.welcome {
+    /* Cute border on purple messages */
+    border-left: 3px solid #ac76ff;
+}
+
+div.level.earned.ep .label {
+    /* Profile's earned PP levels > blue background */
+    background: #009cdd !important;
+}
+
+div#chat .delete-button {
+    /* That small and cute chat delete button again */
+    padding: 3px;
+    height: 15px;
+    width: 32px;
+}
+div#chat .delete-button.bcs-rem {
+    width: 41px !important;
+    padding: 3px 3px 3px 5px !important;
+    color: #ededed !important;
+}
+
+div#user-rollover .meta .user-id {
+    /* Leaving this here for future usage */
+    color: #808691;
+}
+
+
+    /* The following alter the looks of Author / Title */
+div#now-playing-dj {
+    text-align: right;
+    top: 1px;
+    font-size: 10px;
+    right: 135px;
+    position: absolute;
+}
+div#now-playing-dj .dark-label {
+    display: block;
+    color: #999B9F;
+    z-index: 1;
+}
+div#now-playing-media {
+    top: 7px;
+    z-index: 2;
+}
+div#now-playing-media .bar-value {
+    color: #777f92;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+}
+div#now-playing-media .bar-value .author {
+    display: block;
+    color: #eee;
+    font-weight: normal;
+}
+
+div.manager span.emoji {
+    /* Leaving this here for future usage */
+    background: url("https://cdn.plug.dj/_/static/images/icons.d8b5eb442b3acb5ccfbbe2541b9db0756e45beba.png");
+    background-position: -210px -595px;
+    width: 30px;
+    height: 30px;
+    top: 3px !important;
+    left: 3px !important;
+}
+
+div#woot .top .icon,
+div#grab .top .icon,
+div#meh .top .icon {
+    /* Cute vote buttons */    
+    left: 4% !important;
+}
+
+div#woot .top .label,
+div#grab .top .label,
+div#meh .top .label {
+    /* Cute vote buttons */
+    display: none !important;
+}
+
+    /* Cute vote buttons */
+div#meh  {  left: -1px !important;  }
+div#woot {  left: 1px !important;  }
+
+    /* Guests are people too */
+.is-guest #footer-user .buttons,
+.is-guest #chat-header,
+.is-guest .chat-header-button {
+    display: block !important;
+}
+.is-guest #chat-messages {
+    top: 47px !important;
+}
+
+[data-cid^="4820534-"] i.bdg, [data-cid^="4820534-"] i.icon, /* Beta Tester */
+[data-cid^="3727463-"] i.bdg, [data-cid^="3727463-"] i.icon, /* CatSnore */
+[data-cid^="3951373-"] i.bdg, [data-cid^="3951373-"] i.icon { /* T98 */
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+div#chat-input.bcs-afk {
+    background: #111317;
+}
+div#chat-input.bcs-afk.focused {
+    -webkit-box-shadow: inset 0 0 0 1px #009cdd!important;
+    -moz-box-shadow: inset 0 0 0 1px #009cdd!important;
+    box-shadow: inset 0 0 0 1px #f04f30!important;
+}
+div#chat-messages .cm .msg .bcs-bw-word {
+    color: #444a59;
+}
+
+#footer-user .buttons .button .count {
+    top: 18px;
+    right: 10px;
+}
+
+/* ---------------------------------- */
+
+/* --------- BCS' chat logs --------- */
+
+div.bcs-log {
+    padding: 5px 0px 5px 10px;
+    font-size: 12px;
+    color: #eeeeee;
+    position: relative;
+}
+div.bcs-log._1 {
+    color: #00bee8;
+    background-color: #1C1F25;
+}
+span.bcs-chat-info {
+    color: #808691;
+    opacity: 0.2;
+    font-size: 7px;
+}
+a.bcs-chat-lv, a.bcs-chat-id {
+    font-size:9px;
+    color:#eeeeee;
+}
+a.bcs-title {
+    color: #00bee8;
+    font-weight: bold;
+}
+a.bcs-todo-done,
+a.bcs-todo-nope {
+    color: #282C35;
+}
+a.bcs-todo-todo {
+    color: #eeeeee;
+}
+a.bcs-styles-subscriber {
+    color: #c59840;
+    font-size: 11px;
+}
+a.bcs-styles-lRole {
+    color: #ac76ff;
+    font-size: 11px;
+}
+a.bcs-styles-gRole3 {
+    color: #89be6c;
+    font-size: 11px;
+}
+a.bcs-styles-gRole5 {
+    color: #42a5dc;
+    font-size: 11px;
+}
+#chat .delete-button{
+    padding: 3px;
+    height: 15px;
+    width: 32px;
+
+a.bcs-timestamp {
+    color: #dddddd;
+    font-size: 11px;
+}
+
+.bcs-log.bcs-pts-log {
+    color: #c59840;
+    border-left: 3px solid #c59840;
+}
+
+.bcs-chat-image {
+    margin: 5px;
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: -28px;
+}
+
+/* ---------------------------------- */
+
+
+/* Gorgeous Time Remaining Visualizer */
+      /* Or "The Spotify-ify" */
+
+div#spotifyify-holder {
+    height: 2px;
+    width: calc(100% - 182px);
+    left: 47px;
+    bottom: 6px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #282C35;
+}
+
+div#spotifyify-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    background-color: #009cdd;
+}
+
+div#spotifyify-bar.reset {
+    width: 0px !important;
+    transition: 0s linear !important;
+}
+
+/* ---------------------------------- */
+
+.bcs-invert {
+    filter: invert(100%) !important;
+    -webkit-filter: invert(100%) !important;
+    -moz-filter: invert(100%) !important;
+    -o-filter: invert(100%) !important;
+    -ms-filter: invert(100%) !important;
+}
